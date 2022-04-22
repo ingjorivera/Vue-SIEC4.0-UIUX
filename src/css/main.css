@@ -1,0 +1,383 @@
+/* Normalizar HTML */
+@import url('./normalize.css');
+
+
+@import url('http://fonts.cdnfonts.com/css/mark-pro?styles=78509,78513,78515,78512,78516,78511,78514,78510');
+@import url('http://fonts.cdnfonts.com/css/gadugi?styles=66186,66187');
+
+/* Variables */
+
+:root{
+    --advertencia: #ff3434;
+    --exito: rgb(45, 124, 78);
+    --primario: #ffc629;
+    --negro: #000000;
+    --gris: #a09fa1;
+    --gris-claro: #e4dde4;
+    --amarillo-palido: #f4ddae;
+    --gris-oscuro:#313131;
+    --gris-oscuro-claro:#5D5D5D;
+    --amarillo-palido-claro:#FDF9EB;
+    --fondo:#535353;
+    --gris-formulario:#e4e0d0;
+    --grupo-formulario:#A8A596;
+    --blanco:white;
+    --amarillo-palido30: rgba(158, 125, 36, 0.797);
+    --amarillo-oscuro30:#62573d78;
+    --amarillo-oscuro30h:rgba(124, 116, 97, 0.355);
+
+    /* Texto */
+    --enfasis: Mark Pro;
+    --texto: Gadugi;
+    --iconos:Font Awesome 5 Free;
+    --xs:x-small;
+    --s:small;
+    --n:normal;
+    --m:medium;
+    --l:large;
+    --xl:x-large;
+    --xxl:xx-large;
+
+    /* Animacion */
+
+     /* Standard Curves */
+
+     --LINEAR             : cubic-bezier(0.250, 0.250, 0.750, 0.750);
+     --EASE               : cubic-bezier(0.250, 0.100, 0.250, 1.000);
+     --EASE_IN            : cubic-bezier(0.420,  0.000, 1.000, 1.000);
+     --EASE_OUT           : cubic-bezier(0.000, 0.000, 0.580, 1.000);
+     --EASE_IN_OUT        : cubic-bezier(0.420,  0.000, 0.580, 1.000);
+ 
+     /* Ease IN curves */
+ 
+     --EASE_IN_QUAD       : cubic-bezier(0.550,  0.085, 0.680, 0.530);
+     --EASE_IN_CUBIC      : cubic-bezier(0.550,  0.055, 0.675, 0.190);
+     --EASE_IN_QUART      : cubic-bezier(0.895,  0.030, 0.685, 0.220);
+     --EASE_IN_QUINT      : cubic-bezier(0.755,  0.050, 0.855, 0.060);
+     --EASE_IN_SINE       : cubic-bezier(0.470,  0.000, 0.745, 0.715);
+     --EASE_IN_EXPO       : cubic-bezier(0.950,  0.050, 0.795, 0.035);
+     --EASE_IN_CIRC       : cubic-bezier(0.600,  0.040, 0.980, 0.335);
+ 
+     /* Ease Out Curves */
+ 
+     --EASE_OUT_QUAD      : cubic-bezier(0.250, 0.460, 0.450, 0.940);
+     --EASE_OUT_CUBIC     : cubic-bezier(0.215, 0.610, 0.355, 1.000);
+     --EASE_OUT_QUART     : cubic-bezier(0.165, 0.840, 0.440, 1.000);
+     --EASE_OUT_QUINT     : cubic-bezier(0.230, 1.000, 0.320, 1.000);
+     --EASE_OUT_SINE      : cubic-bezier(0.390, 0.575, 0.565, 1.000);
+     --EASE_OUT_EXPO      : cubic-bezier(0.190, 1.000, 0.220, 1.000);
+     --EASE_OUT_CIRC      : cubic-bezier(0.075, 0.820, 0.165, 1.000);
+ 
+     /* Ease IN Out Curves */
+ 
+     --EASE_IN_OUT_QUAD  : cubic-bezier(0.455,  0.030, 0.515, 0.955);
+     --EASE_IN_OUT_CUBIC : cubic-bezier(0.645,  0.045, 0.355, 1.000);
+     --EASE_IN_OUT_QUART : cubic-bezier(0.770,  0.000, 0.175, 1.000);
+     --EASE_IN_OUT_QUINT : cubic-bezier(0.860,  0.000, 0.070, 1.000);
+     --EASE_IN_OUT_SINE  : cubic-bezier(0.445,  0.050, 0.550, 0.950);
+     --EASE_IN_OUT_EXPO  : cubic-bezier(1.000,  0.000, 0.000, 1.000);
+     --EASE_IN_OUT_CIRC  : cubic-bezier(0.785,  0.135, 0.150, 0.860);
+ 
+     /* Ease Bounce Curves */
+ 
+     --EASE_IN_BACK       : cubic-bezier(0.600, -0.280, 0.735, 0.045);
+     --EASE_OUT_BACK      : cubic-bezier(0.175, 0.885, 0.320, 1.275);
+     --EASE_IN_OUT_BACK   : cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    
+}
+body{
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 126px 1fr;
+    height: 100vh;
+    padding: 0;
+    overflow: hidden;
+}
+aside{
+    display: grid;
+    grid-template-rows: 145px ;
+    -webkit-box-shadow: 0px 0px 36px 4px #000000; 
+box-shadow: 0px 0px 36px 4px #000000;
+z-index: 2;
+border-right: 1px solid rgba(255, 255, 255, 0.161);
+}
+aside hr{
+    width: 60%;
+    border: 1px solid var(--gris-oscuro);
+    padding: 0;
+    margin: 0 auto;
+}
+
+
+#loading{
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--negro);
+    transition: all .5s;
+    transition-delay: 1s;
+    opacity: 1;
+    position: absolute;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+#loading span{
+    color: white;
+    letter-spacing: 3px;
+}
+#loading img{
+    height: 70px;
+    opacity: .7;
+}
+
+.logo{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: flex;
+}
+.logo img{
+    width: calc(100vw * 0.1);
+    height: auto;
+    opacity: .4;
+}
+.boton{
+    display: flex;
+    height: 35px;
+    background-color: var(--gris);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .2s;
+    text-transform: uppercase;
+
+}
+.boton.anima:hover{
+    transform: scale(1.05);
+    background-color: var(--color);
+    color: var(--texto);
+}
+.boton:hover{
+    
+    background-color: var(--bg);
+    color: var(--texto);
+}
+
+/* Colores */
+.degradado{
+    background-image: linear-gradient(139deg, #2E291A 5%, #3E3621 26%, #61583F 44%, #DBD2BA 100%);
+}
+
+.primario-t{
+    color: var(--primario);
+}
+.primario-b{
+    background-color: var(--primario);
+}
+.primario-l{
+    border: 2px solid var(--primario);
+}
+.advertencia-t{
+    color: var(--advertencia);
+}
+.advertencia-b{
+    background-color: var(--advertencia);
+}
+.advertencia-l{
+    border: 2px solid var(--advertencia);
+}
+.exito-t{
+    color: var(--exito);
+}
+.exito-b{
+    background-color: var(--exito);
+}
+.exito-l{
+    border: 2px solid var(--exito);
+}
+.negro-t{
+    color: var(--negro);
+}
+.negro-b{
+    background-color: var(--negro);
+}
+.negro50-b{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.negro-l{
+    border: 2px solid var(--negro);
+}
+.gris-t{
+    color: var(--gris);
+}
+.gris-b{
+    background-color: var(--gris);
+}
+.gris-l{
+    border: 2px solid var(--gris);
+}
+.gris-claro-t{
+    color: var(--gris-claro);
+}
+.gris-claro-b{
+    background-color: var(--gris-claro);
+}
+.gris-claro-l{
+    border: 2px solid var(--gris-claro);
+}
+.gris-oscuro-t{
+    color: var(--gris-oscuro);
+}
+.gris-oscuro-b{
+    background-color: var(--gris-oscuro);
+}
+.gris-oscuro50-b{
+    background-color: #48484876;
+}
+.gris-oscuro-l{
+    border: 2px solid var(--gris-oscuro);
+}
+.gris-oscuro-claro-t{
+    color: var(--gris-oscuro-claro);
+}
+.gris-oscuro-claro-b{
+    background-color: var(--gris-oscuro-claro);
+}
+.gris-oscuro-claro-l{
+    border: 2px solid var(--gris-oscuro-claro);
+}
+.fondo-t{
+    color: var(--fondo);
+}
+.fondo-b{
+    background-color: var(--fondo);
+}
+.fondo-l{
+    border: 2px solid var(--fondo);
+}
+.gris-formulario-t{
+    color: var(--gris-formulario);
+}
+.gris-formulario-b{
+    background-color: var(--gris-formulario);
+}
+.gris-formulario-l{
+    border: 2px solid var(--gris-formulario);
+}
+.grupo-formulario-t{
+    color: var(--grupo-formulario);
+}
+.grupo-formulario-b{
+    background-color: var(--grupo-formulario);
+}
+.grupo-formulario-l{
+    border: 2px solid var(--grupo-formulario);
+}
+.amarillo-palido-t{
+    color: var(--amarillo-palido);
+}
+.amarillo-palido-b{
+    background-color: var(--amarillo-palido);
+}
+.amarillo-palido30-b{
+    background-color: var(--amarillo-palido30);
+}
+.amarillo-oscuro30-b{
+    background-color: var(--amarillo-oscuro30);
+}
+.amarillo-palido-l{
+    border: 2px solid var(--amarillo-palido);
+}
+.amarillo-palido-claro-t{
+    color: var(--amarillo-palido-claro);
+}
+.blanco-t{
+    color: var(--blanco);
+}
+.blanco-b{
+    background-color: var(--blanco);
+}
+
+.blanco-l{
+    border: 2px solid var(--blanco);
+}
+.logout{
+    background-color: var(--negro);
+    border: 1px solid rgba(255, 255, 255, 0.307);
+    color: white;
+}
+.transparente-b{
+    background-color: transparent;
+}
+
+/* Tamaños */
+.xxs {
+    font-size: 8px;
+}
+.xs {
+    font-size: x-small;
+}
+.s {
+    font-size: small;
+}
+.n {
+    font-size: normal;
+}
+.m {
+    font-size: medium;
+}
+.l {
+    font-size: large;
+}
+.xl {
+    font-size: x-large;
+}
+.xxl {
+    font-size: xx-large;
+}
+
+.a100{
+    width: 100%;
+}
+.tam100p{
+    width: 100px;
+}
+
+/* Fuentes */
+
+.enfasis{
+    font-family: var(--enfasis);
+}
+.texto{
+    font-family: var(--texto);
+}
+/* Peso fuente */
+
+.bold{
+    font-weight: bold;
+}
+.bolder{
+    font-weight: bolder;
+}
+.normal{
+    font-weight: normal;
+}
+.thin{
+    font-weight: lighter;
+}
+.uppercase{
+    text-transform: uppercase;
+}

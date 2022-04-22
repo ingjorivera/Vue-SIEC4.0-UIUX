@@ -1,0 +1,170 @@
+body{
+    background-color: black;
+}
+.toastSIEC {
+    background-color:transparent;
+}
+.p-toast .p-toast-message .p-toast-message-content .p-toast-summary{
+    font-family: var(--enfasis) !important;
+    font-size: var(--s);
+    text-transform: uppercase;
+}
+.p-toast-message-text{
+    z-index: 1;
+}
+.p-toast .p-toast-message .p-toast-message-content{
+    padding-bottom: 30px;
+}
+.p-toast .p-toast-message .p-toast-message-content .p-toast-detail{
+    font-family: var(--texto);
+    font-size: var(--s);
+    opacity: .6;
+}
+.p-toast .p-toast-message .p-toast-message-content .p-toast-message-icon{
+    font-size: 1.5rem;
+}
+.toastSIEC .p-toast-message.p-toast-message-info{
+    border:none;
+    background-color: rgba(67, 67, 67, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+   color: white;
+   overflow: hidden;
+   border:solid .2px rgba(255, 255, 255, 0.2);
+}
+.toastSIEC .p-toast-message.p-toast-message-success{
+    border:none;
+    background-color: rgba(67, 67, 67, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+   color: white;
+   overflow: hidden;
+}
+.toastSIEC .p-toast-message.p-toast-message-warn{
+    border:none;
+    background-color: rgba(67, 67, 67, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+   color: white;
+   overflow: hidden;
+}
+.toastSIEC .p-toast-message.p-toast-message-error{
+    border:none;
+    background-color: rgba(67, 67, 67, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+   color: white;
+   overflow: hidden;
+}
+
+
+
+.p-toast{
+    opacity:1;
+    background-color: transparent !important;
+}
+
+.pi-info-circle:before{
+    display: flex;
+    font-family: 'Font Awesome 5 Free';
+    content: "\f129"; 
+    color: white;
+    padding: 10px;
+    font-size: medium;
+    background-color: rgb(3, 109, 166);
+    -webkit-box-shadow:0px 0px 105px 45px rgba(9,145,36,0.7);
+-moz-box-shadow: 0px 0px 105px 45px rgba(9,145,36,0.7);
+box-shadow: 0px 0px 105px 45px rgba(3, 109, 166);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+    top: 0;
+    margin-top: 0;
+    width: 15px;
+    height: 15px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+.pi-success-circle:before{
+    font-family: 'Font Awesome 5 Free';
+    content: "\f00c"; 
+    color: white;
+    padding: 10px;
+    font-size: medium;
+    background-color:var(--exito);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow:0px 0px 105px 45px rgba(9,145,36,0.7);
+-moz-box-shadow: 0px 0px 105px 45px rgba(9,145,36,0.7);
+box-shadow: 0px 0px 105px 45px var(--exito);
+    border-radius: 50px;
+    font-weight: bold;
+    top: 0;
+    margin-top: 0;
+}
+.pi-warn-circle:before{
+    font-family: 'Font Awesome 5 Free';
+    content: "\f071"; 
+    color: white;
+    padding: 10px;
+    font-size: medium;
+    background-color: var(--primario);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow:0px 0px 105px 45px rgba(9,145,36,0.7);
+-moz-box-shadow: 0px 0px 105px 45px rgba(9,145,36,0.7);
+box-shadow: 0px 0px 105px 45px var(--primario);
+    border-radius: 50px;
+    font-weight: bold;
+    top: 0;
+    margin-top: 0;
+}
+.pi-error-circle:before{
+    font-family: 'Font Awesome 5 Free';
+    content: "\f00d"; 
+    color: white;
+    padding: 10px;
+    font-size: medium;
+    background-color: var(--advertencia);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow:0px 0px 105px 45px rgba(9,145,36,0.7);
+-moz-box-shadow: 0px 0px 105px 45px rgba(9,145,36,0.7);
+box-shadow: 0px 0px 105px 45px var(--advertencia);
+    border-radius: 50px;
+    font-weight: bold;
+    top: 0;
+    margin-top: 0;
+}
+.p-toast-icon-close{
+    color: white !important;
+    transform: scale(.6);
+    padding: 0 !important;
+    margin: 0;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 2px;
+    top: 0px;
+    z-index: 3;
+}
+
+.p-toast-detail::after{
+
+    color: white;
+    font-size: var(--xs);
+    font-family: var(--texto);
+    content: attr(tiempo);
+    padding: 5px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+
