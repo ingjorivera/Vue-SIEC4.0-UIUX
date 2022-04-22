@@ -1,10 +1,14 @@
 <script setup>
-import { ref } from 'vue';
+import { ref,provide } from 'vue';
 import Sidebar from 'primevue/sidebar';
 import { useToast } from 'primevue/usetoast'
 import { nextTick } from 'vue';
 import Avatar from './components/sidebar/Avatar.vue'
 import Menu from './components/sidebar/Menu.vue'
+import menuItems from './components/sidebar/js/menu'
+import formMulti from './components/formulario-multipaso.vue'
+
+provide('menu',menuItems)
 
 const toast = useToast()
 const visibleLeft=ref(false)
@@ -40,7 +44,7 @@ window.addEventListener('load', function() {
 </script>
 
 <template>
-<Sidebar v-model:visible="visibleLeft">
+<Sidebar v-model:visible="visibleLeft" id="sidebarNotif">
 	<p>Notificaciones</p>
 </Sidebar>
   <Toast class="toastSIEC" id="notif" tiempo="0"/>
@@ -54,7 +58,8 @@ window.addEventListener('load', function() {
            <Menu @notificacion="muestraNotificacion"/>
         </aside>
         <main class="main degradado" id="main">
-           
+          <div class="bg-img"></div>
+           <formMulti/>
         </main>
         <div class="logo"><img src="./assets/logo.svg" alt=""></div>
   </div>

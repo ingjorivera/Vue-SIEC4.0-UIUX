@@ -13,7 +13,7 @@
     gap: 12px;
     display: flex;
     flex-direction: column;
-    max-height: calc(100vh - 270px);
+    max-height: calc(100vh - 252px);
     
 }
 .more{
@@ -32,11 +32,11 @@
     
 }
 .more.up{
-    top:150px;
+    top:158px;
     opacity: 0;
 }
 .more.down{
-    bottom:80px;
+    bottom:87px;
     opacity: 1;
 }
 .more.up::after{

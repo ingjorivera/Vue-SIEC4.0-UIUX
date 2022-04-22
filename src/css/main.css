@@ -105,6 +105,7 @@ aside{
 box-shadow: 0px 0px 36px 4px #000000;
 z-index: 2;
 border-right: 1px solid rgba(255, 255, 255, 0.161);
+
 }
 aside hr{
     width: 60%;
@@ -112,7 +113,63 @@ aside hr{
     padding: 0;
     margin: 0 auto;
 }
+.bg-img{
+    background-image: url('/src/assets/banner_ebsa.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    opacity: .3;
+}
+.p-sidebar{
+    background-color: #40404066;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-right: .3px solid rgba(255, 255, 255, 0.2);
+    border-top: .3px solid rgba(255, 255, 255, 0.2);
+    border-bottom: .3px solid rgba(255, 255, 255, 0.2);
+}
+.p-sidebar-close{
+    transform: scale(.6);
+}
+.p-sidebar .p-sidebar-header .p-sidebar-close:focus, .p-sidebar .p-sidebar-header .p-sidebar-icon:focus{
+    outline: none;
+    box-shadow:none;
+}
+#sidebarNotif{
+    height: 95vh;
+    margin-top: calc(2.5vh);
+}
+#sidebarNotif .p-sidebar-header::after{
+    
+    content: 'Notificaciones';
+    position: absolute;
+    font-size: var(--xl);
+    font-family: var(--enfasis) !important;
+    color: var(--amarillo-palido);
+    left: 55px;
+    top: 30px;
 
+}
+#sidebarNotif .p-sidebar-header::before{
+    font-family:'Font Awesome 6 Free';
+    font-weight: bold;
+    content: '\f0f3';
+    position: absolute;
+    font-size: var(--xl);
+    
+    color: var(--amarillo-palido);
+    left: 20px;
+    top: 30px;
+
+}
 
 #loading{
     height: 100vh;
@@ -178,6 +235,8 @@ aside hr{
 /* Colores */
 .degradado{
     background-image: linear-gradient(139deg, #2E291A 5%, #3E3621 26%, #61583F 44%, #DBD2BA 100%);
+   position: relative;
+   z-index: 1;
 }
 
 .primario-t{
