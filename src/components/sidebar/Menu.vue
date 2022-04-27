@@ -1,22 +1,23 @@
 <script setup>
-
 import '../../css/menu.css'
-import { inject} from 'vue';
-const menu=inject('menu')
+import { useMenuStore } from '../../store/menu'
+import { useStoreToast } from '../../store/toast';
+const store = useMenuStore()
+const storeToast=useStoreToast()
 
 </script>
 <template>
-<div class="container-menu"  id="container-menu" v-on:mouseleave="menu.cerrar">
+<div class="container-menu"  id="container-menu" v-on:mouseleave="store.cerrar">
     <hr>
-    <div class="inner-menu" id="innerMenu" @scroll="menu.scrollFunction">
+    <div class="inner-menu" id="innerMenu" @scroll="store.scrollFunction">
         
         <input type="radio" name="sub1" id="cerrar" checked>
         <div class="more up bold l blanco-t" id="up"></div>
         <div class="more down bold l blanco-t" id="down"></div>
-        <template v-for="(itemMenu,indexM) in menu.menuItems">
+        <template v-for="(itemMenu,indexM) in store.menu">
              
             <div class="wrapper-btn-menu" :id="'btn-menu'+indexM"  >
-                <button class="btn-menu transparente-b" v-on:mouseenter="menu.getPos(indexM)">
+                <button class="btn-menu transparente-b" v-on:mouseenter="store.getPos(indexM)">
                     <i class="xl amarillo-palido-t" :class="itemMenu.icono"></i>
                     <span class="titulo-menu amarillo-palido-t xxs enfasis normal" >{{itemMenu.titulo}}</span>
                     
@@ -44,7 +45,7 @@ const menu=inject('menu')
                                     </div>
                                 </template>
                                 <template v-if="!subItem.elementos">
-                                    <button class="boton enfasis xs  transparente-b blanco-t a100" style="--bg:var(--amarillo-palido30); --texto:var(--blanco);" v-on:click="$emit('notificacion',subItem.titulo,'Texto pasado desde el menu','\f36d')">
+                                    <button class="boton enfasis xs  transparente-b blanco-t a100" style="--bg:var(--amarillo-palido30); --texto:var(--blanco);" v-on:click="storeToast.muestraNotificacion(subItem.titulo,'Texto pasado desde el menu')">
                                     {{subItem.titulo}}
                                     </button>
                                 </template>

@@ -1,0 +1,145 @@
+.login-wrapper{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr .6fr;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+.bg-login{
+    position: absolute;
+    
+}
+.login-box{
+    margin-left: auto;
+    margin-right: auto;
+    width: 420px;
+    height: 485px;
+    border-radius: 20px;
+    /* From https://css.glass */
+background: rgba(0, 0, 0, 0.4);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+backdrop-filter: blur(4.2px);
+-webkit-backdrop-filter: blur(4.2px);
+border: 1px solid rgba(255, 255, 255, 0.21);
+z-index: 99;
+
+position: relative;
+
+}
+.login-box .login-screen{
+    display: grid;
+    grid-template-rows: 72px 83px 164px 82px;
+    display: grid;
+    position: absolute;
+    padding: 40px;
+}
+.login-box .loading-screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.login-box .titulo{
+    margin-top: auto;
+    margin-bottom: auto;
+    text-transform: uppercase;
+}
+.texto-login{
+    padding-top: 10px;
+}
+.login-box .login-form{
+    border-radius: 10px;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding: 21px;
+    padding-bottom: 31px;
+    gap: 10px;
+}
+.login-box .login-form .elemento{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 5px;
+    
+}
+.login-box .footer-login{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.ebsa-logo{
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+}
+.siec-logo{
+    position: absolute;
+    right: 80px;
+    top: 80px;
+    width: 270px;
+    opacity: .48;
+}
+.recover-modal.p-dialog.p-component{
+    border-radius: 20px !important;
+    background: rgba(0, 0, 0, 0.4);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+backdrop-filter: blur(4.2px);
+-webkit-backdrop-filter: blur(4.2px);
+border: 1px solid rgba(255, 255, 255, 0.21);
+width: 500px;
+padding: 5px;
+}
+.recover-modal .p-dialog-header, .p-dialog-content{
+    background-color: transparent !important;
+}
+.recover-modal .recover-pass{
+    display: grid;
+    grid-template-columns: 1fr .5fr;
+    gap: 10px;
+}
+.recover-modal .p-dialog-content{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.login-box.cargando{
+    display: grid;
+    grid-template-rows: 1fr;
+}
+.cargando-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+ /* Transiciones login  */
+
+ .login-enter-active,
+ .login-leave-active{
+     transition: all .3s ease;
+     transform: scale(1);
+ }
+
+.login-enter-from,
+.login-leave-to{
+    opacity:0;
+    transform: scale(1.06);
+}
+
+.login-enter-active .cargando-wrapper,
+.login-leave-active .cargando-wrapper{
+    transition: all .3s ease;
+}
+
+.login-enter-from > .cargando-wrapper,
+.login-leave-to > .cargando-wrapper{
+   margin-top: 100px;
+}

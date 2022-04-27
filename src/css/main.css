@@ -231,6 +231,19 @@ aside hr{
     background-color: var(--bg);
     color: var(--texto);
 }
+.input-normal{
+background-color: white;
+border: 1px solid var(--gris);
+padding: 7px;
+border-radius: 5px;
+transition: all .3s;
+outline: 1px solid transparent;
+
+}
+.input-normal:focus{
+    outline: 1px solid var(--primario);
+    border: 1px solid var(--primario);
+}
 
 /* Colores */
 .degradado{
@@ -381,6 +394,12 @@ aside hr{
 .transparente-b{
     background-color: transparent;
 }
+.subrayado-primario{
+    text-decoration: underline 1px solid var(--primario);
+}
+.cursor-pointer:hover{
+    cursor: pointer;
+}
 
 /* Tamaños */
 .xxs {
@@ -439,4 +458,39 @@ aside hr{
 }
 .uppercase{
     text-transform: uppercase;
+}
+
+/* barra notificaciones */
+.p-sidebar-content{
+   height: 100%;
+}
+.notificaciones-scroll{
+   
+    height: 100%;
+    overflow-y: scroll;
+    position: relative;
+}
+.notificaciones-scroll .notif-wrapper{
+    display: grid;
+    grid-template-columns: 18px 222px ;
+    gap: 10px;
+    padding: 10px;
+    
+}
+.notificaciones-scroll .circulo-n{
+    background-color: white;
+    border-radius: 30px;
+    height: 18px;
+    width: 18px;
+
+}
+.contenido-n{
+    display: grid;
+    gap: 10px;
+}
+.contenido-n .tiempo-n{
+    width: fit-content;
+    padding: 3px 5px;
+    border-radius: 20px;
+    opacity: .3;
 }

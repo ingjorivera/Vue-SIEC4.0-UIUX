@@ -2,7 +2,7 @@ import { createApp} from 'vue'
 import App from './App.vue'
 import PrimeVue from 'primevue/config'
 import ToastService from 'primevue/toastservice'
-
+import { createPinia } from 'pinia'
 
 import Dialog from 'primevue/dialog'
 import Button from 'primevue/button'
@@ -34,6 +34,7 @@ library.add(fas, far, fab)
 
 app.use(PrimeVue)
 app.use(ToastService)
+app.use(createPinia())
 
 app.component('Dialog',Dialog)
 app.component('InputText',InputText)
