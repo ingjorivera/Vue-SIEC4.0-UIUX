@@ -462,7 +462,8 @@ outline: 1px solid transparent;
 
 /* barra notificaciones */
 .p-sidebar-content{
-   height: 100%;
+   height: calc(100% - 100px);
+   margin-top: 20px;
 }
 .notificaciones-scroll{
    
@@ -470,12 +471,26 @@ outline: 1px solid transparent;
     overflow-y: scroll;
     position: relative;
 }
+.notificaciones-scroll::-webkit-scrollbar{
+    width: 6px;
+}
+.notificaciones-scroll::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: var(--gris);
+    
+}
+
 .notificaciones-scroll .notif-wrapper{
     display: grid;
     grid-template-columns: 18px 222px ;
     gap: 10px;
     padding: 10px;
-    
+    opacity: .4;
+    transition: all .3s ease;
+}
+.notif-wrapper:hover{
+    opacity: 1;
+    gap:15px
 }
 .notificaciones-scroll .circulo-n{
     background-color: white;

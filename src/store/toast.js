@@ -8,7 +8,7 @@ export const useStoreToast = defineStore('toastd',()=>{
     const visibleLeft=ref(false)
 
     const muestraNotificacion=(titulo,texto)=>{
-        toast.add({severity:'info', summary:titulo, detail:texto})
+        toast.add({severity:'info', summary:titulo, detail:texto, life:3000})
         nextTick(() =>{
         const now = new Date();
         const not=document.querySelectorAll('.p-toast-message')
@@ -22,13 +22,19 @@ export const useStoreToast = defineStore('toastd',()=>{
    
         mes.setAttribute('tiempo',withPmAm);
         ic.setAttribute('icon','\f36d')
-   
+        agregarHistoria(titulo,texto,withPmAm)
         })
        
       }
+    const historial=ref([])
+    const agregarHistoria=(titulo,texto,hora)=>{
+      historial.value.push({'titulo':titulo,'texto':texto,'hora':hora})
+      
+    }
     return{
             visibleLeft,
             muestraNotificacion,
+            historial
     }
 
 })

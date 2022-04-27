@@ -70,21 +70,24 @@ const storeToast = useStoreToast()
   </div> -->
    <Sidebar v-model:visible="storeToast.visibleLeft" id="sidebarNotif" header="Header">
      <div class="notificaciones-scroll">
-           <div class="notif-wrapper">
+           <template v-for="item in storeToast.historial">
+           <div class="notif-wrapper" >
                  <div class="circulo-n"></div>
                  <div class="contenido-n ">
-                       <div class="titulo-n uppercase blanco-t bold enfasis m">Titulo de notificacion</div>
-                       <div class="texto-n blanco-t s texto">Texto de notificacion</div>
-                       <div class="tiempo-n negro-t blanco-b xs">00:00</div>
+                       <div class="titulo-n uppercase blanco-t bold enfasis s">{{item.titulo}}</div>
+                       <div class="texto-n gris-t s texto">{{item.texto}}</div>
+                       <div class="tiempo-n negro-t blanco-b xs">{{item.hora}}</div>
                  </div>
            </div>
+           </template>
+           
      </div>
    </Sidebar>
       <Transition name="main" mode="out-in" >
             <Login v-if="!store.userlogin.authenticated"></Login>
             <Main v-else></Main>
       </Transition>
-      <Toast class="toastSIEC" id="notif" tiempo="0"/>
+      <Toast class="toastSIEC" id="notif"/>
 </template>
 
 <style>
