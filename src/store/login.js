@@ -12,27 +12,47 @@ export const useLoginStore = defineStore("mainLogin", ()=>{
         modalRecover:false,
         username:'',
         password:'',
-        mensRecov:'Enviando el correo..'
+        mensRecov:'Enviando el correo..',
+        reset:()=>{
+            userlogin.value.authenticated=false;
+            userlogin.value.loader=false;
+            userlogin.value.loadRecover=false;
+            userlogin.value.recoverSend=false;
+            userlogin.value.modalRecover=false;
+            userlogin.value.username='';
+            userlogin.value.password='';
+            userlogin.value.mensRecov='';
+            
+        }
     })
 
     const data = ref({
         name:'',
         lastName:'',
         avatar:'',
-        role:''
+        role:'',
+        reset:()=>{
+           data.value.role='';
+           data.value.lastName='';
+           data.value.name=''
+
+        }
+
     })
 
     const datosUsuario = () => {
         // console.log('llamado a la api para obtener los datos de usuario')
         data.value.name='Nelcy Jhoana'
         data.value.lastName='Garcia'
-        data.value.role='Productivo'
     }
     const iniciarSesion = () =>{
         userlogin.value.loader=true
         setTimeout(()=>{
             userlogin.value.authenticated=true
             datosUsuario()
+            setTimeout(()=>{
+                userlogin.value.loader=false
+            },2000)
         },5000)
     }
     const recoverPass = () =>{
@@ -47,7 +67,7 @@ export const useLoginStore = defineStore("mainLogin", ()=>{
         userlogin.value.recoverSend=false
         
     }
-
+    
     return {
         userlogin,
         data,
@@ -57,4 +77,4 @@ export const useLoginStore = defineStore("mainLogin", ()=>{
         resetRecover,
        
     }
-})
+},{persist:true})

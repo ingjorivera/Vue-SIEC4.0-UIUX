@@ -3,6 +3,7 @@ import App from './App.vue'
 import PrimeVue from 'primevue/config'
 import ToastService from 'primevue/toastservice'
 import { createPinia } from 'pinia'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
 import Dialog from 'primevue/dialog'
 import Button from 'primevue/button'
@@ -29,12 +30,15 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
 const app= createApp(App)
+const pinia=createPinia()
+pinia.use(piniaPluginPersistedstate)
 
 library.add(fas, far, fab)
 
 app.use(PrimeVue)
 app.use(ToastService)
-app.use(createPinia())
+app.use(pinia)
+
 
 app.component('Dialog',Dialog)
 app.component('InputText',InputText)

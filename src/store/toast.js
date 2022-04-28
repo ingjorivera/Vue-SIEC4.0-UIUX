@@ -31,10 +31,15 @@ export const useStoreToast = defineStore('toastd',()=>{
       historial.value.push({'titulo':titulo,'texto':texto,'hora':hora})
       
     }
+    const reset=()=>{
+      historial.value=[]
+      console.log('historial')
+    }
     return{
             visibleLeft,
             muestraNotificacion,
-            historial
+            historial,
+            reset
     }
 
 })

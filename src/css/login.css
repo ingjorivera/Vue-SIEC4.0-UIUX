@@ -89,10 +89,10 @@ position: relative;
 }
 .recover-modal.p-dialog.p-component{
     border-radius: 20px !important;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(30, 30, 30, 0.8);
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-backdrop-filter: blur(4.2px);
--webkit-backdrop-filter: blur(4.2px);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
 border: 1px solid rgba(255, 255, 255, 0.21);
 width: 500px;
 padding: 5px;
@@ -120,26 +120,4 @@ padding: 5px;
     align-items: center;
     gap: 20px;
 }
- /* Transiciones login  */
-
- .login-enter-active,
- .login-leave-active{
-     transition: all .3s ease;
-     transform: scale(1);
- }
-
-.login-enter-from,
-.login-leave-to{
-    opacity:0;
-    transform: scale(1.06);
-}
-
-.login-enter-active .cargando-wrapper,
-.login-leave-active .cargando-wrapper{
-    transition: all .3s ease;
-}
-
-.login-enter-from > .cargando-wrapper,
-.login-leave-to > .cargando-wrapper{
-   margin-top: 100px;
-}
+ 
