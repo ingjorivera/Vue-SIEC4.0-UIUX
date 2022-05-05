@@ -1,10 +1,13 @@
 <script setup>
-import { inject, provide, ref } from 'vue';
-import pasos from './js/formulario-multipaso'
+import Formulario from '../components/Formulario.vue'
 import '../css/formulario-multipaso.css'
 
-import InputText from 'primevue/inputtext';
+import { usePasosStore } from '../store/formulario-multipaso'
+import { useLoginStore } from '../store/login';
 
+
+const storePasos = usePasosStore()
+const storeLogin=useLoginStore()
 let selected=0
 
 </script>
@@ -21,13 +24,13 @@ let selected=0
             <button class="boton-buscar negro-t primario-b enfasis m">Buscar<i class="fas fa-search"></i></button>
         </div>
         <div class="formulario-wrapper">
-            <template v-for="(p,i) in pasos.pasos">
+            <template v-for="(p,i) in storePasos.pasos">
                     <input type="radio" name="tabs" :id="'boton'+i" :checked="i===0">
                 </template>
             <nav>
-                <div class="linea gris-oscuro-claro-b" :style="'--tam: '+pasos.pasos.length*8+'%'"></div>
+                <div class="linea gris-oscuro-claro-b" :style="'--tam: '+storePasos.pasos.length*8+'%'"></div>
                 
-                <template v-for="(paso, indexP) in pasos.pasos">
+                <template v-for="(paso, indexP) in storePasos.pasos">
                     
                     <label class="step-container" :for="'boton'+indexP" :class="'paso'+indexP">
                         <span class="texto-paso enfasis gris-oscuro-claro-t m" > {{paso.titulo}}</span>
@@ -50,28 +53,17 @@ let selected=0
             </nav>
             <main>
                 <div class="contenido-formulario">
-                    <template v-for="(paso,indexC) in pasos.pasos" >
+                    <template v-for="(paso,indexC) in storePasos.pasos" >
                     <div :id="'contenido'+indexC" class="wrapper-cf" :class="'contenido'+indexC">
                         <div class="cabecera-formulario">
-                                <span class="texto-paso-formulario enfasis m normal gris-t" >{{indexC+ " de "+pasos.pasos.length}}</span>
+                                <span class="texto-paso-formulario enfasis m normal gris-t" >{{indexC+ " de "+storePasos.pasos.length}}</span>
                                 <span class="titulo-paso-formulario enfasis xl normal blanco-t" >{{indexC+'. '+paso.titulo}}</span>
                         </div>
                         
                         <div class="cont-formulario gris-formulario-b">
                             <div class="scroll-formulario">
-                                <div class="con">
-                                    
-                                    <div class="elemento-formulario"> 
-                                        <label for="" class="texto s grupo-formulario-t icono-input" input-icon="&#xf007;">Etiqueta:</label>
-                                        <span class="p-input-icon-left">
-                                        <InputText type="text" v-model="value1" placeholder="Texto" class="input-iconL" />
-                                        </span>
-                                    </div>
-                                    <div class="elemento-formulario"> 
-                                        <label for="" class="texto s grupo-formulario-t ">Etiqueta:</label>
-                                        <InputText type="text" v-model="value1" placeholder="Texto" />
-                                    </div>
-                                    
+                                <div class="form-wrap">
+                                <Formulario :data="paso.elementos" :tipo="paso.tipo"></Formulario>
                                 </div>
                             </div>
                         </div>
@@ -79,13 +71,13 @@ let selected=0
                     </template>
                 </div>
                 <div class="botonera">
-                    <template v-if="selected>0 && selected < pasos.pasos.length">
+                    <template v-if="selected>0 && selected < storePasos.pasos.length">
                         <i class="fas fa-chevron-circle-left xxl primario-t"></i>
                     </template>
-                    <template v-if="!(selected === pasos.pasos.length-1)">
+                    <template v-if="!(selected === storePasos.pasos.length-1)">
                         <i class="fas fa-chevron-circle-right xxl primario-t"></i>
                     </template>
-                    <template v-if="selected === pasos.pasos.length-1">
+                    <template v-if="selected === storePasos.pasos.length-1">
                         <button class="boton anima enfasis primario-b negro-t s bold" style="--color: var(--primario); --texto:var(--negro)"><i class="fas fa-save m"></i> Guardar</button>
                     </template>
                 </div>

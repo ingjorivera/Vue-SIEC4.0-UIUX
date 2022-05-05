@@ -479,7 +479,7 @@ const filtrarMenu=(rol)=>{
         items=['1','5','7']
     }
     else if(rol==='Admin'){
-      items=['1','2','3','4','5','6','7','8','9']
+      items=['0','1','2','3','4','5','6','7','8','9']
     }
     for(let j=0;j<items.length;j++){
         for(let i=0;i<menu.length;i++){

@@ -20,7 +20,7 @@
     --amarillo-palido-claro:#FDF9EB;
     --fondo:#535353;
     --gris-formulario:#e4e0d0;
-    --grupo-formulario:#A8A596;
+    --grupo-formulario:#827f74;
     --blanco:white;
     --amarillo-palido30: rgba(158, 125, 36, 0.797);
     --amarillo-oscuro30:#62573d78;
@@ -123,7 +123,7 @@ aside hr{
     
     bottom: 0;
     right: 0;
-    z-index: 0;
+    z-index: -1;
     opacity: .3;
 }
 .p-sidebar{
@@ -237,12 +237,19 @@ border: 1px solid var(--gris);
 padding: 7px;
 border-radius: 5px;
 transition: all .3s;
-outline: 1px solid transparent;
+height: 35px;
+
 
 }
 .input-normal:focus{
-    outline: 1px solid var(--primario);
+    outline: none;
     border: 1px solid var(--primario);
+}
+.p-inputtext:enabled:hover{
+    border: .4px solid var(--primario);
+}
+.p-dropdown-panel{
+    z-index: 99 !important;
 }
 
 /* Colores */

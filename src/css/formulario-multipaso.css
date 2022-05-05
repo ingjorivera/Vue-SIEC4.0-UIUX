@@ -1,11 +1,28 @@
+
 .multipaso-wrapper{
     display: grid;
     width: 90%;
-  
+    position: relative;
     height: 100vh;
     margin: 0 auto;
     grid-template-rows: 140px 1fr;
     
+}
+.p-tooltip{
+    z-index: 99;
+}
+.p-tooltip .p-tooltip-text {
+    background-color: var(--primario) !important;
+    padding: 5px !important;
+    padding-left: 10px !important;
+    padding-right:10px !important;
+    border-radius: 5px !important;
+    font-family: var(--texto);
+    color: var(--negro) !important;
+    font-size: var(--s);
+}
+.p-tooltip .p-tooltip-arrow{
+    border-top-color: var(--primario) !important;
 }
 .cabecera-pagina{
     display: flex;
@@ -43,7 +60,7 @@
 .contenido-pagina .buscador input:focus{
     outline: none;
 }
-.contenido-pagina .buscador i{
+.contenido-pagina .buscador svg{
     padding-left: 10px;
 }
 .contenido-pagina .formulario-wrapper{
@@ -70,8 +87,8 @@
 }
 .formulario-wrapper .step-container{
     display: grid;
-    grid-template-columns: 1fr 50px 5px;
-    height: 50px;
+    grid-template-columns: 1fr 42px 5px;
+    height: 42px;
     gap: 20px;
     z-index: 1;
     position: relative;
@@ -157,15 +174,15 @@ box-shadow: 0px 0px 92px 18px rgba(255,198,41,0.9);
     top: 0;
     bottom:0;
    
-    right: 49px;
+    right: 45px;
     margin-top: auto;
     margin-bottom: auto;
     
 }
 
 .formulario-wrapper main{
-    display: grid;
-    grid-template-rows: 1fr 80px ;
+    display: flex;
+    flex-direction: column;
     padding-right: 30px;
 }
 .formulario-wrapper .contenido-formulario{
@@ -177,8 +194,8 @@ box-shadow: 0px 0px 92px 18px rgba(255,198,41,0.9);
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    display: grid;
-    grid-template-rows: 100px 1fr;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     transition: all .3s;
@@ -192,32 +209,29 @@ box-shadow: 0px 0px 92px 18px rgba(255,198,41,0.9);
     align-items: center;
     padding-top: 25px;
     padding-bottom: 10px;
+    height: 100px;
 
 }
 .formulario-wrapper .cont-formulario{
-    border-radius: 10px;
-    align-items: center;
-    justify-content: center;
     display: flex;
+    height: calc(100vh - 400px);
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 20px;
     
-    position: relative;
 }
 
-
-
-
-
-
 .formulario-wrapper .cont-formulario .scroll-formulario{
-    height: calc(100% - 25px);
-    width: calc(100% - 20px);
-    
-    overflow-y: scroll;
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    padding: 10px;
-    
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    grid-row-gap: 3px;
+    grid-column-gap: 15px;
+    padding-right: 20px;
+    width: 100%;
 }
 .scroll-formulario::-webkit-scrollbar{
     width: 6px;
@@ -233,6 +247,7 @@ box-shadow: 0px 0px 92px 18px rgba(255,198,41,0.9);
     justify-content: flex-end;
     align-items: center;
     gap: 10px;
+    height: 80px;
 }
 .formulario-wrapper .botonera i{
     padding-right: 5px;
@@ -240,27 +255,27 @@ box-shadow: 0px 0px 92px 18px rgba(255,198,41,0.9);
 
 #boton0:checked ~ nav .paso0 > span,
 #boton1:checked ~ nav .paso1 > span,
-#boton1:checked ~ nav .paso2 > span,
-#boton2:checked ~ nav .paso3 > span,
-#boton3:checked ~ nav .paso4 > span,
-#boton4:checked ~ nav .paso5 > span,
-#boton5:checked ~ nav .paso6 > span,
-#boton6:checked ~ nav .paso7 > span,
-#boton7:checked ~ nav .paso8 > span,
-#boton8:checked ~ nav .paso9 > span{
+#boton2:checked ~ nav .paso2 > span,
+#boton3:checked ~ nav .paso3 > span,
+#boton4:checked ~ nav .paso4 > span,
+#boton5:checked ~ nav .paso5 > span,
+#boton6:checked ~ nav .paso6 > span,
+#boton7:checked ~ nav .paso7 > span,
+#boton8:checked ~ nav .paso8 > span,
+#boton9:checked ~ nav .paso9 > span{
     color: white;
     padding-right: 5px;
 }
 #boton0:checked ~ nav .paso0 > .circulo-numero,
 #boton1:checked ~ nav .paso1 > .circulo-numero,
-#boton1:checked ~ nav .paso2 > .circulo-numero,
-#boton2:checked ~ nav .paso3 > .circulo-numero,
-#boton3:checked ~ nav .paso4 > .circulo-numero,
-#boton4:checked ~ nav .paso5 > .circulo-numero,
-#boton5:checked ~ nav .paso6 > .circulo-numero,
-#boton6:checked ~ nav .paso7 > .circulo-numero,
-#boton7:checked ~ nav .paso8 > .circulo-numero,
-#boton8:checked ~ nav .paso9 > .circulo-numero{
+#boton2:checked ~ nav .paso2 > .circulo-numero,
+#boton3:checked ~ nav .paso3 > .circulo-numero,
+#boton4:checked ~ nav .paso4 > .circulo-numero,
+#boton5:checked ~ nav .paso5 > .circulo-numero,
+#boton6:checked ~ nav .paso6 > .circulo-numero,
+#boton7:checked ~ nav .paso7 > .circulo-numero,
+#boton8:checked ~ nav .paso8 > .circulo-numero,
+#boton9:checked ~ nav .paso9 > .circulo-numero{
     background: var(--primario);
     color: var(--negro);
     transform: scale(1.2);
@@ -271,28 +286,28 @@ box-shadow: 0px 0px 92px 18px rgba(255,198,41,0.9);
 
 #boton0:checked ~ nav .paso0 > .paso-estado,
 #boton1:checked ~ nav .paso1 > .paso-estado,
-#boton1:checked ~ nav .paso2 > .paso-estado,
-#boton2:checked ~ nav .paso3 > .paso-estado,
-#boton3:checked ~ nav .paso4 > .paso-estado,
-#boton4:checked ~ nav .paso5 > .paso-estado,
-#boton5:checked ~ nav .paso6 > .paso-estado,
-#boton6:checked ~ nav .paso7 > .paso-estado,
-#boton7:checked ~ nav .paso8 > .paso-estado,
-#boton8:checked ~ nav .paso9 > .paso-estado{
+#boton2:checked ~ nav .paso2 > .paso-estado,
+#boton3:checked ~ nav .paso3 > .paso-estado,
+#boton4:checked ~ nav .paso4 > .paso-estado,
+#boton5:checked ~ nav .paso5 > .paso-estado,
+#boton6:checked ~ nav .paso6 > .paso-estado,
+#boton7:checked ~ nav .paso7 > .paso-estado,
+#boton8:checked ~ nav .paso8 > .paso-estado,
+#boton9:checked ~ nav .paso9 > .paso-estado{
     transform: scale(1.2);
 opacity: 1 !important;
 
 }
 #boton0:checked ~ main > .contenido-formulario > .contenido0,
 #boton1:checked ~ main > .contenido-formulario > .contenido1,
-#boton1:checked ~ main > .contenido-formulario > .contenido2,
-#boton2:checked ~ main > .contenido-formulario > .contenido3,
-#boton3:checked ~ main > .contenido-formulario > .contenido4,
-#boton4:checked ~ main > .contenido-formulario > .contenido5,
-#boton5:checked ~ main > .contenido-formulario > .contenido6,
-#boton6:checked ~ main > .contenido-formulario > .contenido7,
-#boton7:checked ~ main > .contenido-formulario > .contenido8,
-#boton8:checked ~ main > .contenido-formulario > .contenido9{
+#boton2:checked ~ main > .contenido-formulario > .contenido2,
+#boton3:checked ~ main > .contenido-formulario > .contenido3,
+#boton4:checked ~ main > .contenido-formulario > .contenido4,
+#boton5:checked ~ main > .contenido-formulario > .contenido5,
+#boton6:checked ~ main > .contenido-formulario > .contenido6,
+#boton7:checked ~ main > .contenido-formulario > .contenido7,
+#boton8:checked ~ main > .contenido-formulario > .contenido8,
+#boton9:checked ~ main > .contenido-formulario > .contenido9{
     
 opacity: 1 !important;
 visibility: visible;
@@ -314,10 +329,10 @@ visibility: visible;
     display: flex;
     flex: 1;
     min-width: 120px;
-    height: 80px;
     padding: 5px;
     flex-direction: column;
     gap: 5px;
+    min-height: 75px;
 }
 .elemento-formulario input{
     display: block;
@@ -345,4 +360,12 @@ visibility: visible;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.form-wrap{
+    display: flex;
+    flex: row;
+    flex-wrap: wrap;
+    height: fit-content;
+    column-gap: 10px;
 }

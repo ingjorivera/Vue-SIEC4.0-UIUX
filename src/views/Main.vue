@@ -2,7 +2,8 @@
 
 import Avatar from '../components/sidebar/Avatar.vue'
 import Menu from '../components/sidebar/Menu.vue'
-
+import router from '../router';
+router.push('/solicitud-conexion')
 </script>
 
 <template>
@@ -16,6 +17,7 @@ import Menu from '../components/sidebar/Menu.vue'
            <Menu />
         </aside>
         <main class="main degradado" id="main">
+          <router-view class="paginas"></router-view>
           <div class="bg-img"></div>
         </main>
         <div class="logo"><img src="../assets/logo.svg" alt=""></div>
